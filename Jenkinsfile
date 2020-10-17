@@ -28,10 +28,10 @@ pipeline{
 			}
 		}
 	}
-		/*
+		
 	stage(' Deploying to GKE as single pod'){
 		steps{
-			sh 'kubectl set image docker.io/swe645docker/studentsurvey:${BUILD_ID}'
+			sh ' kubectl set image -n swe645 deployment/swe645final student=gmu645/studentsurvey645:${BUILD_ID}'
 		}
 
 	}
