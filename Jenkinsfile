@@ -14,7 +14,7 @@ pipeline{
 					sh 'jar -cvf studentsurvey.war -C studentssurvey/WebContent/ .'
 					sh 'echo ${BUILD_TIMESTAMP}'
 					sh 'docker login  -u gmu645 -p ${DOCKERHUB_PASS} '
-					def customimage=docker.build("gmu645/studentsurvey:latest")
+					def customimage=docker.build("gmu645/studentsurvey:$BUILD_TIMESTAMP")
 			}
 
 		}
@@ -27,9 +27,9 @@ pipeline{
 			}
 		}
 	}
-	/*stage(' Deploying to GKE as single pod'){
+	stage(' Deploying to GKE as single pod'){
 		steps{
-			sh 'kubectl set image deployment/stusurvey-pipeline stusurvey-pipeline=hekme5/studentsurvey645:${BUILD_TIMESTAMP} -n jenkins-pipeline'
+			sh 'kubectl set image deployment/swe645test image=docker.io/swe645docker/studentsurvey:latest'
 		}
 
 	}
