@@ -28,13 +28,14 @@ pipeline{
 			}
 		}
 	}
-		/*
+		
 	stage(' Deploying to GKE as single pod'){
 		steps{
-			sh 'kubectl set image deployment/swe645test image=docker.io/swe645docker/studentsurvey:latest'
+			sh 'kubectl set image deployment/swe645test image=docker.io/swe645docker/studentsurvey:${BUILD_ID}'
 		}
 
 	}
+		/*
 	stage(' Deploying to GKE as with Load balancer'){
 		steps{
 			sh 'kubectl set image deployment/studentsurvey645-lb studentsurvey645-lb=hekme5/studentsurvey645:${BUILD_TIMESTAMP} -n jenkins-pipeline'
