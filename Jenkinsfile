@@ -2,7 +2,7 @@ pipeline{
 	agent any 
 	environment{
 		registry = "gmu645/studentsurvey"
-		DOCKERHUB_PASS = 'dockerhub'
+		DOCKERHUB_PASS = "soulmate.com"
 
 	}
 	stages{
