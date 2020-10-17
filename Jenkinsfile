@@ -15,7 +15,7 @@ pipeline{
 					sh 'echo ${BUILD_TIMESTAMP}'
 					
 					sh 'docker login  -u gmu645 -p ${DOCKERHUB_PASS} '
-					def customimage=docker.build("gmu645/studentsurvey:${unique_Id}")
+					def customimage=docker.build("gmu645/studentsurvey:${BUILD_ID}")
 			}
 
 		}
@@ -24,7 +24,7 @@ pipeline{
 	stage("Pushing image to DockerHub"){
 		steps{
 			script{
-				sh 'docker push gmu645/studentsurvey:${unique_Id}'
+				sh 'docker push gmu645/studentsurvey:${BUILD_ID}'
 			}
 		}
 	}
