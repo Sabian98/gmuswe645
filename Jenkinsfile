@@ -1,7 +1,7 @@
 pipeline{
 	agent any 
 	environment{
-		DOCKERHUB_PASS = credentials('soulmate.com')
+		//DOCKERHUB_PASS = credentials('soulmate.com')
 
 	}
 	stages{
