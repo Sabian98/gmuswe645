@@ -16,11 +16,13 @@ pipeline{
 					
 					sh 'docker login  -u gmu645 -p ${DOCKERHUB_PASS} '
 					def customimage=docker.build("gmu645/studentsurvey:${BUILD_ID}")
+					sh 'sudo su ubuntu'
+					sh ' kubectl get svc'
 			}
 
 		}
 
-	}
+	}/*
 	stage("Pushing image to DockerHub"){
 		steps{
 			script{
