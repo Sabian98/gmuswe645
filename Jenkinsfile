@@ -3,7 +3,7 @@ pipeline{
 	environment{
 		registry = "gmu645/studentsurvey"
 		DOCKERHUB_PASS = "soulmate.com"
-
+		 unique_Id = UUID.randomUUID().toString()
 	}
 	stages{
 		stage("Building jar"){
@@ -13,7 +13,7 @@ pipeline{
 					sh 'rm -rf *.war'
 					sh 'jar -cvf studentsurvey.war -C studentssurvey/WebContent/ .'
 					sh 'echo ${BUILD_TIMESTAMP}'
-					 unique_Id = UUID.randomUUID().toString()
+					
 					sh 'docker login  -u gmu645 -p ${DOCKERHUB_PASS} '
 					def customimage=docker.build("gmu645/studentsurvey:${unique_Id}")
 			}
