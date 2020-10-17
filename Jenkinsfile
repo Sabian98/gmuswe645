@@ -31,7 +31,7 @@ pipeline{
 		
 	stage(' Deploying to GKE as single pod'){
 		steps{
-			sh ' kubectl set image -n swe645  student=gmu645/studentsurvey645:${BUILD_ID}'
+			sh ' kubectl set image  student=gmu645/studentsurvey645:${BUILD_ID}'
 		}
 
 	}
