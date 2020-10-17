@@ -4,7 +4,7 @@ pipeline{
 		registry = "gmu645/studentsurvey"
 		DOCKERHUB_PASS = "soulmate.com"
 		 unique_Id = UUID.randomUUID().toString()
-		GOOGLE_APPLICATION_CREDENTIALS    = 'gsa-key.json'
+		//GOOGLE_APPLICATION_CREDENTIALS    = 'gsa-key.json'
 		//env.GOOGLE_APPLICATION_CREDENTIALS=GOOGLE_APPLICATION_CREDENTIALS
 	}
 	stages{
