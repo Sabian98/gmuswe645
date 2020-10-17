@@ -23,7 +23,7 @@ pipeline{
 	stage("Pushing image to DockerHub"){
 		steps{
 			script{
-				sh 'docker push gmu645/studentsurvey:latest'
+				sh 'docker push gmu645/studentsurvey:${elapsed}'
 			}
 		}
 	}
