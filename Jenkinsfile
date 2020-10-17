@@ -27,6 +27,7 @@ pipeline{
 			}
 		}
 	}
+		/*
 	stage(' Deploying to GKE as single pod'){
 		steps{
 			sh 'kubectl set image deployment/swe645test image=docker.io/swe645docker/studentsurvey:latest'
