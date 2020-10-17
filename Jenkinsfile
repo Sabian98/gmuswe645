@@ -24,11 +24,11 @@ pipeline{
 	stage("Pushing image to DockerHub"){
 		steps{
 			script{
-				sh 'docker push gmu645/studentsurvey:${BUILD_ID}'
+				sh ' kubectl set image deployment/swe645final student=studentsurvey:${BUILD_ID}'
 			}
 		}
 	}
-		
+		/*
 	stage(' Deploying to GKE as single pod'){
 		steps{
 			sh 'kubectl set image docker.io/swe645docker/studentsurvey:${BUILD_ID}'
