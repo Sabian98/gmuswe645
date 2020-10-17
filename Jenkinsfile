@@ -31,7 +31,7 @@ pipeline{
 		
 	stage(' Deploying to GKE as single pod'){
 		steps{
-			sh 'kubectl set image deployment/swe645test image=docker.io/swe645docker/studentsurvey:${BUILD_ID}'
+			sh 'kubectl set image docker.io/swe645docker/studentsurvey:${BUILD_ID}'
 		}
 
 	}
