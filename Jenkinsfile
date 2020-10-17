@@ -5,7 +5,7 @@ pipeline{
 		DOCKERHUB_PASS = "soulmate.com"
 		 unique_Id = UUID.randomUUID().toString()
 		GOOGLE_APPLICATION_CREDENTIALS    = 'gsa-key.json'
-		//env.GOOGLE_APPLICATION_CREDENTIALS=GOOGLE_APPLICATION_CREDENTIALS
+		
 	}
 	stages{
 		stage("Building jar"){
@@ -17,9 +17,7 @@ pipeline{
 					sh 'echo ${BUILD_TIMESTAMP}'
 					sh 'docker login  -u gmu645 --password-stdin < ~/my_password '
 					def customimage=docker.build("gmu645/studentsurvey:${BUILD_ID}")
-					//sh 'export GOOGLE_APPLICATION_CREDENTIALS=gsa-key.json'
-					 //env.GOOGLE_APPLICATION_CREDENTIALS=GOOGLE_APPLICATION_CREDENTIALS
-					sh 'kubectl get svc '
+
 					
 			}
 
