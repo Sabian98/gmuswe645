@@ -14,7 +14,7 @@ pipeline{
 					sh 'jar -cvf studentsurvey.war -C studentssurvey/WebContent/ .'
 					sh 'echo ${BUILD_TIMESTAMP}'
 					sh 'docker login  -u gmu645 -p ${DOCKERHUB_PASS} '
-					def customimage=docker.build("gmu645/studentsurvey:latest")
+					def customimage=docker.build("gmu645/studentsurvey:${elapsed}")
 			}
 
 		}
