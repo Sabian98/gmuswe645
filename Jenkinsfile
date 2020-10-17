@@ -24,7 +24,7 @@ pipeline{
 	stage("Pushing image to DockerHub"){
 		steps{
 			script{
-				sh ' kubectl set image deployment.apps/swe645final student=studentsurvey:${BUILD_ID}'
+				sh ' kubectl set image deploy/swe645final student=studentsurvey:${BUILD_ID}'
 			}
 		}
 	}
