@@ -11,7 +11,7 @@ pipeline{
 				script{
 					checkout scm
 					sh 'rm -rf *.war'
-					sh 'jar -cvf studentsurvey.war -C WebContent/ .'
+					sh 'jar -cvf studentsurvey.war -C studentssurvey/WebContent/ .'
 					sh 'echo ${BUILD_TIMESTAMP}'
 					def customimage=docker.build("gmu645/studentsurvey:${BUILD_TIMESTAMP}")
 			}
