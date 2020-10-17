@@ -13,8 +13,9 @@ pipeline{
 					sh 'rm -rf *.war'
 					sh 'jar -cvf studentsurvey.war -C studentssurvey/WebContent/ .'
 					sh 'echo ${BUILD_TIMESTAMP}'
+					 unique_Id = UUID.randomUUID().toString()
 					sh 'docker login  -u gmu645 -p ${DOCKERHUB_PASS} '
-					def customimage=docker.build("gmu645/studentsurvey:${elapsed}")
+					def customimage=docker.build("gmu645/studentsurvey:${unique_Id}")
 			}
 
 		}
@@ -23,7 +24,7 @@ pipeline{
 	stage("Pushing image to DockerHub"){
 		steps{
 			script{
-				sh 'docker push gmu645/studentsurvey:${elapsed}'
+				sh 'docker push gmu645/studentsurvey:${unique_Id}'
 			}
 		}
 	}
