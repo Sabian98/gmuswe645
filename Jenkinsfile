@@ -13,7 +13,7 @@ pipeline{
 					sh 'rm -rf *.war'
 					sh 'jar -cvf studentsurvey.war -C studentssurvey/WebContent/ .'
 					sh 'echo ${BUILD_TIMESTAMP}'
-					sh 'docker login  -u gmu645 --password-stdin < ~/my_password '
+					//sh 'docker login  -u gmu645 --password-stdin < ~/my_password '
 					def customimage=docker.build("gmu645/studentsurvey:${BUILD_ID}")
 					
 			}
