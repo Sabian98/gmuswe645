@@ -20,14 +20,14 @@ pipeline{
 		}
 
 	}
-/*	stage("Pushing image to DockerHub"){
+	stage("Pushing image to DockerHub"){
 		steps{
 			script{
-				sh 'docker push gmu645/studentsurvey:${BUILD_TIMESTAMP}'
+				sh 'docker push gmu645/studentsurvey:latest'
 			}
 		}
 	}
-	stage(' Deploying to GKE as single pod'){
+	/*stage(' Deploying to GKE as single pod'){
 		steps{
 			sh 'kubectl set image deployment/stusurvey-pipeline stusurvey-pipeline=hekme5/studentsurvey645:${BUILD_TIMESTAMP} -n jenkins-pipeline'
 		}
