@@ -34,6 +34,20 @@ pipeline{
 			//sh ' kubectl set image  container/student student=gmu645/studentsurvey645:${BUILD_ID} -n swe645'
 			sh  "chmod +x deploy.sh"
 			sh "./deploy.sh :${BUILD_ID} "
+			sshagent(['kubectl']){
+			sh "scp -o StrictHostKeyChecking=no deployment.yaml ubuntu@3.133.95.91:/home/ubuntu/"
+				script{
+				
+					try{
+						sh "ssh ubuntu@3.133.95.91 kubectl apply -f ."
+					}
+					catch(error){
+						sh "ssh ubuntu@3.133.95.91 kubectl create -f ."
+					}
+				
+				}
+				
+			}
 		}
 
 	}
