@@ -29,7 +29,7 @@ pipeline{
 		}
 	}
 		
-	stage(' Deploying to GKE as single pod'){
+	/*stage(' Deploying to GKE as single pod'){
 		steps{
 			//sh ' kubectl set image  container/student student=gmu645/studentsurvey645:${BUILD_ID} -n swe645'
 			sh  "chmod +x deploy.sh"
