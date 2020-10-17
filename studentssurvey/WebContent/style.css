@@ -1,0 +1,16 @@
+body {
+
+	font-family:   Courier;
+  
+}
+#main
+ {
+ text-align: left;
+ margin-left: 20%;
+}
+h1 {
+  color: blue;
+}
+p {
+  color: red;
+}
