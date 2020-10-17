@@ -1,7 +1,8 @@
 pipeline{
 	agent any 
 	environment{
-		//DOCKERHUB_PASS = credentials('soulmate.com')
+		registry = "gmu645/studentsurvey"
+		registryCredential = 'dockerhub'
 
 	}
 	stages{
@@ -19,7 +20,7 @@ pipeline{
 		}
 
 	}
-	stage("Pushing image to DockerHub"){
+/*	stage("Pushing image to DockerHub"){
 		steps{
 			script{
 				sh 'docker push gmu645/studentsurvey:${BUILD_TIMESTAMP}'
@@ -37,7 +38,7 @@ pipeline{
 			sh 'kubectl set image deployment/studentsurvey645-lb studentsurvey645-lb=hekme5/studentsurvey645:${BUILD_TIMESTAMP} -n jenkins-pipeline'
 		}
 	}
-
+*/
 }
 
 
