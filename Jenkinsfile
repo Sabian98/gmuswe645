@@ -13,7 +13,7 @@ pipeline{
 					sh 'rm -rf *.war'
 					sh 'jar -cvf studentsurvey.war -C studentssurvey/WebContent/ .'
 					sh 'echo ${BUILD_TIMESTAMP}'
-					//def customimage=docker.build("gmu645/studentsurvey:updated")
+					def customimage=docker.build("gmu645/studentsurvey:updated")
 			}
 
 		}
