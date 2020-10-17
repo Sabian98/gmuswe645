@@ -5,7 +5,7 @@ pipeline{
 
 	}
 	stages{
-		stage{
+		stage("Building jar"){
 			steps{
 				script{
 					checkout scm
