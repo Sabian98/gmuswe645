@@ -16,7 +16,7 @@ pipeline{
 					sh 'jar -cvf studentsurvey.war -C studentssurvey/WebContent/ .'
 					sh 'echo ${BUILD_TIMESTAMP}'
 					sh 'docker login  -u gmu645 --password-stdin < ~/my_password '
-					def customimage=docker.build("gmu645/studentsurvey:${BUILD_ID}")
+					def customimage=docker.build("gmu645/studentsurvey:${BUILD_ID}.${unique_Id}")
 					sh 'pwd'
 
 					
@@ -35,7 +35,7 @@ pipeline{
 		
 	stage(' Deploying to GKE as single pod'){
 		steps{
-			sh ' kubectl set image  deployment/swe645final student=gmu645/studentsurvey:${BUILD_ID}'
+			sh ' kubectl set image  deployment/swe645final student=gmu645/studentsurvey:${BUILD_ID}.${unique_Id}'
 			
 		}
 
