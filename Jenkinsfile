@@ -17,6 +17,7 @@ pipeline{
 					sh 'echo ${BUILD_TIMESTAMP}'
 					sh 'docker login  -u gmu645 --password-stdin < ~/my_password '
 					def customimage=docker.build("gmu645/studentsurvey:${BUILD_ID}")
+					sh 'pwd'
 
 					
 			}
@@ -34,7 +35,7 @@ pipeline{
 		
 	stage(' Deploying to GKE as single pod'){
 		steps{
-			sh ' kubectl set image  deployment/swe645final student=gmu645/studentsurvey645:${BUILD_ID}'
+			sh ' kubectl set image  deployment/swe645final swe645final=gmu645/studentsurvey645:${BUILD_ID}'
 			
 		}
 
