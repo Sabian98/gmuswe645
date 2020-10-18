@@ -1,0 +1,12 @@
+apiversion: v1
+kind: Service
+metadata:
+  name: surveyservice
+spec:
+  type: LoadBalancer
+  selector:
+    app: survey
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080                  
