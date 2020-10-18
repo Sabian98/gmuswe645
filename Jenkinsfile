@@ -1,3 +1,6 @@
+/* Submitted by #Taseef Rahman & Mahbubul Alam Palash
+Jenkins file for building application using Docker & Deploying them in Google Kubernete Engine Cluster
+*/
 pipeline{
 	agent any 
 	environment{
@@ -40,13 +43,7 @@ pipeline{
 		}
 
 	}
-		/*
-	stage(' Deploying to GKE as with Load balancer'){
-		steps{
-			sh 'kubectl set image deployment/studentsurvey645-lb studentsurvey645-lb=hekme5/studentsurvey:${BUILD_TIMESTAMP} -n jenkins-pipeline'
-		}
-	}
-*/
+
 }
 
 
