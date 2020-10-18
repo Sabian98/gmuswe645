@@ -28,7 +28,7 @@ pipeline{
 	stage("Pushing image to DockerHub"){
 		steps{
 			script{
-				sh 'docker push gmu645/studentsurvey:${BUILD_ID}'
+				sh 'docker push gmu645/studentsurvey:${BUILD_ID}.${unique_Id}'
 			}
 		}
 	}
