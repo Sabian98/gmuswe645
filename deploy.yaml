@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: student
-        image: gmu645/studentsurvey:version
+        image: gmu645/studentsurvey:40
