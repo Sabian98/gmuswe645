@@ -6,7 +6,7 @@
  kubernete cluster.
  
  The step by step procedure is described below:
- 1.At first the source file is pushed to a github repository and an account in dockerhub is also created.
+ 1.At first the source file is pushed to a github repository and an account in dockerhub is also created.\n
  2. An amazon ec2 instance is created and docker is installed in the instance.
  3. Then the source file of assignment2 is uploaded into ec2 instance and a docker image is created by exrending an image of tomcat server 8.
  4. A service account is created in google kubernete engine and a cluster has been created there and appropriate access has been given to the IAM user
