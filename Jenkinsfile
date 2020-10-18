@@ -35,7 +35,7 @@ pipeline{
 		
 	stage(' Deploying to GKE as single pod'){
 		steps{
-			sh ' kubectl set image  deployment/swe645final student=gmu645/studentsurvey645:${BUILD_ID}'
+			sh ' kubectl set image  deployment/swe645final student=gmu645/studentsurvey:${BUILD_ID}'
 			
 		}
 
@@ -43,7 +43,7 @@ pipeline{
 		/*
 	stage(' Deploying to GKE as with Load balancer'){
 		steps{
-			sh 'kubectl set image deployment/studentsurvey645-lb studentsurvey645-lb=hekme5/studentsurvey645:${BUILD_TIMESTAMP} -n jenkins-pipeline'
+			sh 'kubectl set image deployment/studentsurvey645-lb studentsurvey645-lb=hekme5/studentsurvey:${BUILD_TIMESTAMP} -n jenkins-pipeline'
 		}
 	}
 */
