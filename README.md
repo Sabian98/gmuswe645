@@ -23,3 +23,4 @@ Links of the project:
 
 Link of the application in kubernete cluster: http://34.72.239.68/studentsurvey/
 
+Home Page of Mahbubul Alam Palash:https://s3.us-east-2.amazonaws.com/palashgmu.com/index.html
